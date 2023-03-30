@@ -2,7 +2,7 @@
 This is a React app that displays characters from the Rick and Morty TV show. It uses the [Rick and Morty API](https://rickandmortyapi.com/) to fetch character data and displays the results using Tailwind CSS for styling. It uses Tailwind CSS for styling.
 
 ## Pages
-### Home**
+### Home
 The first page displays a list of characters with their name, status, and origin. The list loads more characters as the user scrolls down. The app uses the useEffect hook to fetch data from the API and the useState hook to keep track of the current page and loading state. It also uses the IntersectionObserver API to detect when the user reaches the bottom of the page and load more data. The Navbar component is used to display a header with the app's name.
 
 ### Character Details
