@@ -19,21 +19,21 @@ const CardDetails = () => {
   }, [api])
 
   return (
-    <>
+    <div className="bg-pink-300 h-screen">
       <Navbar />
-      <div className="">
-        <div className="">
-            <img src={image} alt='' />
+      <div className="flex flex-row items-center bg-gray-800 p-4 rounded-lg m-8 md:m-12 lg:m-16">
+        <div className="w-1/4">
+            <img src={image} alt='' className="rounded-lg" />
         </div>
-        <div className="">
-            <h2>{name}</h2>
-            <p>{status}</p>
-            <p>{origin?.name}</p>
-            <p>{gender}</p>
-            <p>{location?.name}</p>
+        <div className="w-3/4 px-4">
+            <h2 className="text-lg font-bold text-green-400">Name: {name}</h2>
+            <p className="text-sm font-medium text-gray-300">Status: {status}</p>
+            <p className="text-sm font-medium text-gray-300">Origin: {origin?.name}</p>
+            <p className="text-sm font-medium text-gray-300">Gender: {gender}</p>
+            <p className="text-sm font-medium text-gray-300">Location: {location?.name}</p>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 export default CardDetails
