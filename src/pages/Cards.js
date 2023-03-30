@@ -1,36 +1,30 @@
 import { Link } from "react-router-dom";
 
-const Cards = ({page, results}) => {
+const Cards = ({results}) => {
     let display;
 
-    if(results) {
+    if(Array.isArray(results)) {
         display = results.map(result => {
             let {id, image, name, status, origin} = result
             return (
-                <>
-                
+                <div key={id}>
+                    <Link
+                        to={`/character/${id}`}
+                    >
+                        <div className="">
+                            <img src={image} alt='' />
+                        </div>
+                    </Link>
                     <div className="">
                         <Link
-                            to={`${page}${id}`}
-                            key={id}
+                            to={`/character/${id}`}
                         >
-                            <div className="">
-                                <img src={image} alt='' />
-                            </div>
+                            <h2>{name}</h2>
                         </Link>
-                        <div className="">
-                            <Link
-                                to={`${page}${id}`}
-                                key={id}
-                            >
-                                <h2>{name}</h2>
-                            </Link>
-                            <p>{status}</p>
-                            <p>{origin?.name}</p>
-                        </div>
+                        <p>{status}</p>
+                        <p>{origin?.name}</p>
                     </div>
-                
-                </>
+                </div>
             )
         })
     } else {
