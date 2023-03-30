@@ -1,13 +1,11 @@
 import { useState, useEffect, useRef } from "react"
 import Navbar from "../components/Navbar"
 import Cards from "./Cards"
-import Footer from "../components/Footer"
 
 const Home = () => {
     const [fetchedData, setFetchedData] = useState({info: {}, results: {}})
     const [page, setPage] = useState(1)
     const [isLoading, setIsLoading] = useState(false)
-    const [search, setSearch] = useState('')
 
     const {info, results} = fetchedData
     console.log(fetchedData)
@@ -25,7 +23,7 @@ const Home = () => {
             setIsLoading(false)
         }
         fetchData()
-    }, [page, search])
+    }, [page])
 
     const observer = useRef()
     const lastCardRef = useRef()
@@ -45,13 +43,12 @@ const Home = () => {
     }, [isLoading, info.next])
 
   return (
-    <div className="bg-pink-300">
+    <div className="bg-green-900">
       <Navbar />
       <Cards results={results} />
       <div ref={lastCardRef} />
-      {isLoading && <p>Loading...</p>}
-      {!isLoading && !info.next && <p>No more characters.</p>}
-      <Footer />
+      {isLoading && <p className="text-lg lg:text-m font-medium text-gray-300">Loading...</p>}
+      {!isLoading && !info.next && <p className="text-lg lg:text-m font-medium text-gray-300">No more characters.</p>}
     </div>
   )
 }
