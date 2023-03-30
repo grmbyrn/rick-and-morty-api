@@ -21,10 +21,10 @@ The CardDetails component is used in the character details view to display the c
 ## Installation
 To run the app locally, follow these steps:
 
-Clone the repository: **git clone https://github.com/example/rick-and-morty-app.git**
-Install the dependencies: **npm install**
-Start the app: **npm start**
-Open the app in your browser: **http://localhost:3000**
+- Clone the repository: **git clone https://github.com/example/rick-and-morty-app.git**
+- Install the dependencies: **npm install**
+- Start the app: **npm start**
+- Open the app in your browser: **http://localhost:3000**
 
 ## Future Improvements
 Add search and filtering functionality to allow users to find specific characters based on different criteria.
